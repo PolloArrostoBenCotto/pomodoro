@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Pomodoro timer" />
+        <title>Pomodoro</title>
+        <link rel="icon" type="image/png" href="/static/icons/pollorfolio.png">
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}" />
+    </head>
+    <body>
+        <main id="top">
+            <div class="container hero">
+                <span class="eyebrow">Designer &amp; developer</span>
+                <h1 style="margin-top: 10px;"><special>T</special> i learn, i create.</h1>
+                <p class="intro">A high schooler designer and developer based in Italy, interested in robotics and software development.</p>
+                <a class="button" href="#work">See selected work</a>
+            </div>
+
+            <section id="work">
+                <div class="container">
+                    <h2><special style="font-size: 50px;">P</special>Past projects</h2>
+                    <div class="projects">
+                        <a class="project" href="/gustavo" aria-label="Open Project One">
+                            <span class="project-number">WRO2025 - Trento&Singapore</span>
+                            <h3>Gustavo</h3>
+                            <p>A smart travel assistant, helping you directly at the bus stop.</p>
+                            <prize>World championship Bronze</prize>
+                        </a>
+                        <a class="project" href="/argo" aria-label="Open Project Two">
+                            <inpr>In progress</inpr>
+                            <span class="project-number">WRO2026 - Brescia&Zagabria</span>
+                            <h3>Argo</h3>
+                            <p>An archeo helper with the tast to bring the whole archeological patrimony in the digital world for everyone to see.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about">
+                <div class="container">
+                    <h2><special style="font-size: 50px;">V</special>About</h2>
+                    <p class="about">Hi there! I'm Pollo, a high schooler that got into coding and used it to create many projects for competitions and fun.</p>
+                    <a class="button" href="/downloadCV" target="_blank" style="padding-top: 0px; padding-bottom: 6px; padding-left: 25px; margin-left: -2px;">
+                        Download CV
+                        <special style="font-size: 30px;">D</special>
+                    </a>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="container contact">
+                    <div>
+                        <h2>Let’s work together!</h2>
+                        <p>Want help on something?</p>
+                    </div>
+                    <a class="email" href="mailto:therealpolloarrosto@example.com"><special style="font-size: 67px; font-weight: normal;">A</special>therealpolloarrosto@example.com</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="container">© 2026 Pollo</footer>
+    </body>
+</html>

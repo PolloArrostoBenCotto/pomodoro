@@ -1,0 +1,21 @@
+[project]
+name = "fastapi-vercel"
+version = "0.1.0"
+description = "FastAPI application deployed on Vercel"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "fastapi==0.100.0",
+    "uvicorn==0.22.0",
+    "starlette==0.27.0",
+
+    # HTML Templates
+    "jinja2==3.1.4",
+
+    # Multipart/form-data (UploadFile, Form)
+    "python-multipart==0.0.20",
+
+    # Validazione
+    "pydantic==2.10.6",
+]
