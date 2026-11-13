@@ -62,6 +62,13 @@ a { color: inherit; text-underline-offset: 3px; }
   padding: 80px 20px 32px;
 }
 
+.controls a { color: inherit; text-underline-offset: 3px; }
+
+.controls a:hover {
+  background-color: white;
+  color: black;
+}
+
 h1 {
   font-family: 'number';
   letter-spacing: 0.05em;
@@ -72,6 +79,7 @@ h1 {
 }
 
 .button {
+  cursor: pointer;
   display: inline-block;
   padding: 11px 17px;
   margin: 0.5rem 1rem;
@@ -84,7 +92,8 @@ h1 {
 
 .button:hover { 
   opacity: .72;
-  fill: solid currentColor;
+  border: 1px solid white;
+  background-color: currentColor;
   color: inherit;
 }
 
