@@ -1,1 +1,2 @@
-uvicorn main:app --reload
+cd /d "%~dp0"
+python -m uvicorn main:app --reload

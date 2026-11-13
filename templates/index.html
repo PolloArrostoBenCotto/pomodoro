@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -11,52 +12,43 @@
     <body>
         <main id="top">
             <div class="container hero">
-                <h1>00:00</h1>
-                <a class="button" href="#work">Start</a>
+                <h1>25:00</h1>
+                <div class="controls">
+                    <a class="button" onclick="StartPomoLong()">Start</a>
+                    <a class="button" onclick="PausePomoLong()">Pause</a>
+                </div>
             </div>
-
-            <section id="work">
-                <div class="container">
-                    <h2><special style="font-size: 50px;">P</special>Past projects</h2>
-                    <div class="projects">
-                        <a class="project" href="/gustavo" aria-label="Open Project One">
-                            <span class="project-number">WRO2025 - Trento&Singapore</span>
-                            <h3>Gustavo</h3>
-                            <p>A smart travel assistant, helping you directly at the bus stop.</p>
-                            <prize>World championship Bronze</prize>
-                        </a>
-                        <a class="project" href="/argo" aria-label="Open Project Two">
-                            <inpr>In progress</inpr>
-                            <span class="project-number">WRO2026 - Brescia&Zagabria</span>
-                            <h3>Argo</h3>
-                            <p>An archeo helper with the tast to bring the whole archeological patrimony in the digital world for everyone to see.</p>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="about">
-                <div class="container">
-                    <h2><special style="font-size: 50px;">V</special>About</h2>
-                    <p class="about">Hi there! I'm Pollo, a high schooler that got into coding and used it to create many projects for competitions and fun.</p>
-                    <a class="button" href="/downloadCV" target="_blank" style="padding-top: 0px; padding-bottom: 6px; padding-left: 25px; margin-left: -2px;">
-                        Download CV
-                        <special style="font-size: 30px;">D</special>
-                    </a>
-                </div>
-            </section>
-
-            <section id="contact">
-                <div class="container contact">
-                    <div>
-                        <h2>Let’s work together!</h2>
-                        <p>Want help on something?</p>
-                    </div>
-                    <a class="email" href="mailto:therealpolloarrosto@example.com"><special style="font-size: 67px; font-weight: normal;">A</special>therealpolloarrosto@example.com</a>
-                </div>
-            </section>
-        </main>
 
         <footer class="container">© 2026 Pollo</footer>
     </body>
 </html>
+
+<script>
+    let mins = 25;
+    let secs = 0;
+    let timer;
+
+    function StartPomoLong() {
+        clearInterval(timer);
+        timer = setInterval(updateTimer, 1000);
+    }
+
+    function PausePomoLong() {
+        clearInterval(timer);
+    }
+
+    function updateTimer() {
+        if (secs === 0) {
+            if (mins === 0) {
+                clearInterval(timer);
+                alert("Time's up!");
+                return;
+            }
+            mins--;
+            secs = 59;
+        } else {
+            secs--;
+        }
+        document.querySelector('h1').textContent = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+</script>
