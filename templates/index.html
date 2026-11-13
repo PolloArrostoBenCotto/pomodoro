@@ -13,9 +13,11 @@
         <main id="top">
             <div class="container hero">
                 <h1>25:00</h1>
+                <a class="prog"></a>
                 <div class="controls">
                     <a class="button" onclick="StartPomoLong()">Start</a>
                     <a class="button" onclick="PausePomoLong()">Pause</a>
+                    <a class="button" onclick="RestartPomoLong()" id="restart">Restart</a>
                 </div>
             </div>
 
@@ -27,6 +29,9 @@
     let mins = 25;
     let secs = 0;
     let timer;
+    let longfinish = 1;
+    document.getElementById("restart").style.visibility="hidden";
+        document.getElementById("restart").style.display="none";
 
     function StartPomoLong() {
         clearInterval(timer);
@@ -37,11 +42,20 @@
         clearInterval(timer);
     }
 
+    function RestartPomoLong() {
+        clearInterval(timer);
+        mins = 25;
+        secs = 0;
+        document.querySelector('h1').textContent = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        document.getElementById("restart").style.visibility="hidden";
+        document.getElementById("restart").style.display="none";
+    }
+
     function updateTimer() {
         if (secs === 0) {
             if (mins === 0) {
                 clearInterval(timer);
-                alert("Time's up!");
+                longfinish++;
                 return;
             }
             mins--;
@@ -50,5 +64,16 @@
             secs--;
         }
         document.querySelector('h1').textContent = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        if (mins !== 25) {
+            document.getElementById("restart").style.visibility="visible";
+            document.getElementById("restart").style.display="inherit";
+        }
     }
+    for (let i = 0; i < longfinish; i++) {
+        document.querySelector('.prog').innerHTML += '&#9670;';
+    }
+    for (let i = 0; i < (4-longfinish); i++) {
+        document.querySelector('.prog').innerHTML += '&#9671;';
+    }
+
 </script>
